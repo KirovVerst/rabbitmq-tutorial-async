@@ -2,12 +2,15 @@ import asyncio
 import aio_pika
 import time
 
+QUEUE_NAME = 'task_queue'
+
 
 async def main(loop):
     conn = await aio_pika.connect(host='localhost', loop=loop)
     channel: aio_pika.Channel = await conn.channel()
-    queue: aio_pika.Queue = await channel.declare_queue('hello')
-    await queue.consume(callback_on_message, no_ack=True)
+    await channel.set_qos(prefetch_count=1)
+    queue: aio_pika.Queue = await channel.declare_queue(QUEUE_NAME, durable=True)
+    await queue.consume(callback_on_message)
     return conn
 
 
