@@ -1,7 +1,7 @@
 import asyncio
-from uuid import uuid4
 from typing import Dict
 from typing import Optional
+from uuid import uuid4
 
 import aio_pika
 

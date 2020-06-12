@@ -1,5 +1,6 @@
 import asyncio
 import sys
+
 import aio_pika
 
 ROUTING_KEY = 'task_queue'

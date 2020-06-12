@@ -1,5 +1,6 @@
 import asyncio
 import sys
+
 import aio_pika
 
 EXCHANGE_NAME = "logs"
