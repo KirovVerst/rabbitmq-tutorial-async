@@ -1,6 +1,7 @@
 import asyncio
-import aio_pika
 import time
+
+import aio_pika
 
 QUEUE_NAME = 'task_queue'
 

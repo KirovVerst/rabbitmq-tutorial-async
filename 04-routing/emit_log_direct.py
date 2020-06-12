@@ -1,4 +1,5 @@
 import asyncio
+
 import aio_pika
 
 EXCHANGE_NAME = "direct_logs"
